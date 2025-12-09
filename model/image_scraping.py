@@ -274,11 +274,11 @@ def search_and_download(search_term: str, driver_path: str, target_path='./datas
     if error_count > 0:
         print(f"Failed/Skipped: {error_count} (small files, timeouts, or invalid images)")
     print(f"{'='*60}")
-
-# List of search queries - add or modify as needed
-# Images will be saved to ./datasets/<query_name>/ for each query
-query = ["Serena Williams", "Lionel Messi", "Maria Sharapova", "Roger Federer", "Virat Kohli"]
-
-# Process each query: search Google Images and download results
-for q in query:
-    search_and_download(q, r"./chromedriver.exe", number_images=100)
+    
+def scraping_images(query: list, number_images:int):
+    # List of search queries - add or modify as needed
+    # Images will be saved to ./datasets/<query_name>/ for each query
+    
+    # Process each query: search Google Images and download results
+    for q in query:
+        search_and_download(q, r"./chromedriver.exe", number_images=number_images)
