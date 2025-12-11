@@ -78,7 +78,8 @@ def classify_image(base64_image_data, file_path=None):
         
         results.append({
             "class": __class_number_to_name[pred_num],
-            "class_probability": pred_probs
+            "class_probability": pred_probs,
+            "class_labels": list(__class_number_to_name.values())
         })
 
     return results
