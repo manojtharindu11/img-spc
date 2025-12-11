@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Person Classifier</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%2338bdf8'>🎬</text></svg>"
+        type="image/svg+xml">
+</head>
+
+<body>
+    <main id="app">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">Image Classifier</p>
+                <p class="subhead">Drop a photo of one of the five players to see who the model thinks it is.</p>
+            </div>
+            <button id="selectButton" type="button" class="ghost">Choose image</button>
+        </header>
+
+        <section class="panel" aria-label="Supported players">
+            <div class="supported">
+                <div>
+                    <p class="eyebrow">Supported players</p>
+                    <h2>These five athletes are recognized</h2>
+                </div>
+            </div>
+            <div class="gallery" id="gallery" aria-label="Sample images of supported players"></div>
+        </section>
+
+        <div class="two-column">
+            <section class="panel left-panel">
+                <div id="dropzone" class="dropzone" aria-label="Drop an image here">
+                    <input id="fileInput" type="file" accept="image/*" hidden>
+                    <div class="drop-hint">
+                        <p class="hint-title">Drop an image</p>
+                        <p class="hint-sub">or click to browse</p>
+                        <p class="hint-note">PNG, JPG only</p>
+                    </div>
+                    <img id="preview" alt="Preview" class="preview" hidden>
+                </div>
+                <button id="classifyButton" type="button" class="classify-btn" hidden>Classify Image</button>
+                <div id="status" class="status">Waiting for an image...</div>
+            </section>
+
+            <section class="panel right-panel">
+                <div class="results-header">
+                    <p class="eyebrow">Classification Results</p>
+                    <h2>Predictions</h2>
+                </div>
+                <div id="results" class="results" aria-live="polite"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
